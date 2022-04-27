@@ -22,33 +22,30 @@
   width: 300px;
   border: none;
   height: 100px;
-  color: #fb8500;
-  background-color: #6c757d;
+  color: #0f0f0f;
+  background-color: #f9a620;
+  
 }
 
 .btns {
   display: grid;
   grid-template-areas:
-    'clear clear erase division'
+    'clear erase dot division'
     'seven eight nine multiplication'
     'four five six minus'
     'one two three plus'
-    'zero zero dot equal';
+    'parenthesis1 parenthesis2 zero equal';
   grid-gap: 7px;
   justify-items: center;
+  margin-left: 4px;
 }
 
-.input_button.zero {
-  grid-area: zero;
-}
 
-#clear {
-  grid-area: clear;
-}
 
 .input_button,
 #erase,
-#equal {
+#equal,
+#clear {
   width: 60px;
   background-color: #fb8500;
   border-radius: 50%;
@@ -61,19 +58,7 @@
   margin: 3px;
 }
 
-#clear,
-.input_button.zero {
-  width: 130px;
-  background-color: #fb8500;
-  border-radius: 48%;
-  text-align: center;
-  line-height: 55px;
-  font-size: 1.8rem;
-  cursor: pointer;
-  user-select: none;
-  border: none;
-  margin: 3px;
-}
+
 
 .btns input:hover {
   filter: brightness(140%);
@@ -94,6 +79,60 @@ button {
 }
 
 #clear,
-#erase {
+#erase,
+.input_button.dot
+
+{
   background-color: #adb5bd;
+}
+
+@media (max-width:370px) {
+  .calculator{
+ 
+    width: 250px;
+    height: 420px;
+  }
+  
+  #userInput {
+    font-size: 2em;
+    width: 250px;
+    border: none;
+    height: 80px;
+  }
+  .input_button,
+  #erase,
+  #equal,
+  #clear {
+    width: 50px;
+   line-height: 45px;
+    font-size: 1.3rem;
+   
+  }
+
+}
+
+
+@media (max-width:300px) {
+  .calculator{
+ 
+    width: 200px;
+    height: 350px;
+  }
+  
+  #userInput {
+    font-size: 1.5em;
+    width: 200px;
+    border: none;
+    height: 70px;
+  }
+  .input_button,
+  #erase,
+  #equal,
+  #clear {
+    width: 40px;
+   line-height: 35px;
+    font-size: 1rem;
+   margin-left: 0.1px;
+  }
+
 }
